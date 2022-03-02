@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class BreweryAdapter(val data: List<String>) : RecyclerView.Adapter<BreweryAdapter.BreweryViewHolder>(){
+class BreweryAdapter(val data: ArrayList<String>) : RecyclerView.Adapter<BreweryAdapter.BreweryViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BreweryViewHolder {
         val view = LayoutInflater.from(parent.context)

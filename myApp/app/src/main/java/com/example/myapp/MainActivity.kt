@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         factService.getBrewery().enqueue(object : Callback<Brewery> {
             override fun onResponse(call: Call<Brewery>, response: Response<Brewery>) {
                 breweries.add(response.body()?.name.toString())
+                Log.i("asdf", breweries.get(0).toString())
+
             }
 
             override fun onFailure(call: Call<Brewery>, t: Throwable) {
@@ -35,11 +37,9 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-
         rvItems = findViewById(R.id.rv_breweries)
         rvItems.layoutManager = LinearLayoutManager(this)
         rvItems.adapter = BreweryAdapter(breweries)
-
     }
 
     private fun buildService(): BreweryService{
